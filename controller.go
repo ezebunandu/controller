@@ -38,5 +38,8 @@ func (ctl *Controller) EnsureOn(lightname string) error {
 }
 
 func (ctl *Controller) PingBridge() error {
-    return errors.New("oh no")
+    if err := ctl.bridge.GetInfo(); err != nil {
+        return err
+    }
+    return nil
 }
