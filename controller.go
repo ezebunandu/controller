@@ -10,7 +10,7 @@ type Controller struct {
     bridge *hue.Bridge
 }
 
-func New(HueID, HueIPAddress string) (*Controller, error) {
+func NewController(HueID, HueIPAddress string) (*Controller, error) {
     if HueID == "" || HueIPAddress == ""{
         return nil, errors.New("HueID and HueIPAddress cannot be empty")
     }

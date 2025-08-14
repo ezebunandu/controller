@@ -33,7 +33,7 @@ import (
 var HueIPAddress = ""
 var HueID = ""
 func main() {
-    ctl, err := controller.New(HueID, HueIPAddress)
+    ctl, err := controller.NewController(HueID, HueIPAddress)
     if err != nil {
         fmt.Fprintln(os.Stderr, err)
         os.Exit(1)

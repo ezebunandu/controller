@@ -16,7 +16,7 @@ func TestNew_ReturnsLoggedInController(t *testing.T){
     if HueID == "" || HueIPAddress == "" {
         t.Fatal("env variables HUE_ID and HUE_IP_ADDRESS must be set")
     }
-    ctl, err := controller.New(HueID, HueIPAddress)
+    ctl, err := controller.NewController(HueID, HueIPAddress)
     if err != nil {
         t.Fatal(err)
     }
