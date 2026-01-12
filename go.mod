@@ -1,4 +1,4 @@
-module controller
+module github.com/ezebunandu/controller
 
 go 1.24.0
 

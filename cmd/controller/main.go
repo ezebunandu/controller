@@ -4,35 +4,11 @@ import (
 	"fmt"
 	"os"
 
-    "controller"
+    "github.com/ezebunandu/controller"
 )
 
-// import (
-//     hue "github.com/ezebunandu/gohue"
-// )
-
-// var HueIPAddress = "192.168.57.231"
-// var HueID = "6Q3jiDVwElwoO2XADP-0rvB7BWTvSCuKNJQS9gth"
-// func main(){
-//     bridge, err := hue.NewBridge(HueIPAddress)
-//     if err != nil {
-//         panic(err)
-//     }
-//     if err = bridge.Login(HueID); err != nil {
-//         panic(err)
-//     }
-//     light, err := bridge.GetLightByName("Lamp Stand 2")
-//     if err != nil {
-//         panic(err)
-//     }
-//     if err = light.On(); err != nil {
-//         panic(err)
-//     }
-// }
-
-var HueIPAddress = ""
-var HueID = ""
 func main() {
+    HueID, HueIPAddress := os.Getenv("HUE_ID"), os.Getenv("HUE_IP_ADDRESS")
     ctl, err := controller.NewController(HueID, HueIPAddress)
     if err != nil {
         fmt.Fprintln(os.Stderr, err)

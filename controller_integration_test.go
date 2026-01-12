@@ -3,7 +3,7 @@
 package controller_test
 
 import (
-	"controller"
+	"github.com/ezebunandu/controller"
 	"os"
 	"testing"
 )
