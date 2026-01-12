@@ -37,6 +37,18 @@ func (ctl *Controller) EnsureOn(lightname string) error {
     return nil
 }
 
+func (ctl *Controller) EnsureOff(lightname string) error {
+    light, err := ctl.bridge.GetLightByName(lightname)
+    if err != nil {
+        return err
+    }
+    err = light.Off()
+    if err != nil {
+        return err
+    }
+    return nil
+}
+
 func (ctl *Controller) PingBridge() error {
     if err := ctl.bridge.GetInfo(); err != nil {
         return err
